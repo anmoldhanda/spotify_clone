@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify</title>
+    <!-- ====================== custom css ====================== -->
+    <link rel="stylesheet" href="css/index.css" />
+    <!-- ====================== fontawesome icons ====================== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- ====================== favicon icon ====================== -->
+    <link rel="icon" type="image/x-icon" href="images/faviconicon.png" />
+  </head>
+  <body>
+    <div class="parentcontainer">
+      <!-- ====================== sidebar menu ====================== -->
+      <aside class="sidebarmenu">
+        <div class="sidebarnavigation">
+          <a href="#" class="sidebarlinks">
+            <i class="fa-solid fa-house"></i>
+            <h2>Home</h2>
+          </a>
+          <a href="#" class="sidebarlinks">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <h2>Search</h2>
+          </a>
+        </div>
+        <div class="librarycontainer">
+          <div class="librarysubcontainer">
+            <h2><i class="fa-solid fa-bars-progress"></i> Your Library</h2>
+            <div class="libraryindicatoricons">
+              <i class="fa-solid fa-plus"></i>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+          <button class="playlistsbtn">playlists</button>
+        </div>
+        <div class="recentactivitycontainer">
+          <div class="searchlibrary">
+            <form action="#" class="searchbar">
+              <input
+                type="search"
+                name="searchbar"
+                placeholder="Search in your library"
+                id="searchbarinputfield"
+              />
+            </form>
+            <i class="fa-solid fa-magnifying-glass" id="searchsongicon"></i>
+          </div>
+          <div class="recentactivity">
+            <button class="recentactivityindicatorbtn">
+              Recents <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        <div class="likedsongscontainer">
+          <div class="likedsongspic">
+            <img src="images/likedsongspic.jpg" alt="likedsongs" />
+          </div>
+          <div class="likedsongsdetails">
+            <h2>Liked Songs</h2>
+            <p class="likedsongsdescription">
+              <i class="fa-solid fa-music"></i> Playlist 11 songs
+            </p>
+          </div>
+        </div>
+      </aside>
+      <!-- ====================== songs list ====================== -->
+      <main class="songsmaincontainer">
+        <div class="headlinecontentarea">
+          <nav class="topnavigationbar">
+            <div class="forwardbackwardicons">
+              <button class="forwardbackwardbtn">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button class="forwardbackwardbtn">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+            <ul class="topnavliks">
+              <li class="topnavitem">
+                <a href="#"
+                  ><button class="explorepremiumbtn">Explore Premium</button></a
+                >
+              </li>
+              <li class="topnavitem">
+                <a href="#"
+                  ><button class="installappbtn">
+                    <i class="fa-regular fa-circle-down"></i> Install App
+                  </button></a
+                >
+              </li>
+              <li class="topnavitem forwardbackwardbtn">
+                <i class="fa-regular fa-bell"></i>
+              </li>
+              <li class="topnavitem forwardbackwardbtn">
+                <i class="fa-regular fa-user"></i>
+              </li>
+            </ul>
+          </nav>
+          <div class="pagecontainer">
+            <div class="sidepicdiv">
+              <img
+                src="images/likedsongspic.jpg"
+                alt="likedsongspic"
+                class="sidepic"
+              />
+            </div>
+            <div class="details">
+              <h4>Playlist</h4>
+              <h1 class="mainheadline">Liked Songs</h1>
+              <h4 class="username">Anmol Dhanda <span>11 Songs</span></h4>
+            </div>
+          </div>
+        </div>
+        <div class="playlistsongindicatorcontainer">
+          <div class="playicon">
+            <i class="fa-solid fa-play"></i>
+          </div>
+          <div class="songplaylistdiv">
+            <button class="recentactivityindicatorbtn">
+              Recents <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </main>
+      <!-- ====================== current songs details ====================== -->
+      <div class="currentsongscontainer">
+        <!-- <h3>anmol dhanda</h3> -->
+      </div>
+      <p class="currentmusiclabel">Listening on Web Music Player</p>
+    </div>
+    <!-- ====================== custom js ====================== -->
+    <script src="js/index.js"></script>
+  </body>
+</html>
