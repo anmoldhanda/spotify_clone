@@ -217,7 +217,7 @@
         </div>
       </main>
       <!-- ====================== current songs details ====================== -->
-      <div class="currentsongscontainer">
+      <section class="currentsongscontainer">
         <div class="pageheadlinearea">
           <a href="#"><h3 class="pageheadline">Liked Songs</h3></a>
           <i class="fa-solid fa-x"></i>
@@ -256,13 +256,36 @@
             <p class="otherdesignationsartis">Music Producer, Composer</p>
           </div>
         </div>
-      </div>
-      <div class="musicplayercontainer">
-        <div class="musicplayercontrols">
-          <!-- <i class="fa-solid fa-pause"></i> -->
+      </section>
+      <footer class="musicplayercontainer">
+        <div class="likedsongscontainer">
+          <div class="likedsongspic">
+            <img src="images/babydollmini.png" alt="likedsongs" />
+          </div>
+          <div class="likedsongsdetails">
+            <h2>BABYDOLL</h2>
+            <p class="likedsongsdescription">Ari Abdul</p>
+          </div>
+          <div class="likedsongicon">
+            <i class="fa-solid fa-heart green"></i>
+          </div>
         </div>
-        <p class="currentmusiclabel">Listening on Web Music Player</p>
-      </div>
+        <div class="musicplayercontrolscontainer">
+          <div class="musicplayercontroliconscontainer">
+            <i class="fa-solid fa-backward-step stepbackwardicon"></i>
+            <!-- <i class="fa-solid fa-pause pauseicon"></i> -->
+            <i class="fa-solid fa-play playicon"></i>
+            <i class="fa-solid fa-forward-step stepforwardicon"></i>
+          </div>
+          <div class="musicduration">
+            <input
+              type="range"
+              name="musicrange"
+              class="musicdurationrangeinput"
+            />
+          </div>
+        </div>
+      </footer>
     </div>
     <!-- ====================== custom js ====================== -->
     <script src="js/index.js"></script>

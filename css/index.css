@@ -97,6 +97,7 @@ th {
   /* gap: 1.8rem; */
   /* width: 96%; */
   margin: 0 auto;
+  position: relative;
 }
 
 .sidebarmenu {
@@ -142,6 +143,12 @@ th {
   width: 3rem;
   height: 3rem;
   border-radius: var(--border-radius-1);
+}
+
+.likedsongicon .green {
+  color: var(--primarygreen);
+  font-size: 1.3rem;
+  cursor: pointer;
 }
 
 .songsdatabasetable table tbody tr td .green,
@@ -315,15 +322,6 @@ th {
   transform: scale(1.042);
 }
 
-.currentmusiclabel {
-  background: var(--primarygreen);
-  width: 100vw;
-  text-align: right;
-  color: var(--darkblack);
-  font-weight: bold;
-  padding: 5px;
-}
-
 .songsdatabasetable {
   padding: var(--card-padding);
 }
@@ -437,4 +435,56 @@ th {
   height: 5rem;
   width: 5rem;
   border-radius: 50px;
+}
+
+.musicplayercontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100vw;
+  background: var(--darkblack);
+  /* border: 1px dashed var(--primarygreen); */
+  padding: var(--border-radius-3);
+  position: sticky;
+  bottom: 0;
+}
+
+.musicplayercontainer .likedsongscontainer {
+  background: transparent;
+}
+
+.musicplayercontrolscontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.musicplayercontroliconscontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.musicplayercontroliconscontainer .playicon,
+.musicplayercontroliconscontainer .pauseicon {
+  background: var(--whitecolor);
+  border-radius: 50%;
+  padding: 0.41rem 0.91rem;
+  font-size: 1.4rem;
+  color: var(--darkblack);
+  cursor: pointer;
+}
+
+.musicplayercontroliconscontainer .stepbackwardicon,
+.musicplayercontroliconscontainer .stepforwardicon {
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.musicduration .musicdurationrangeinput {
+  width: 50vw;
+  cursor: pointer;
 }
