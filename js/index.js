@@ -1,3 +1,4 @@
+// open close search bar for search library input field
 const searchsongicon = document.getElementById("searchsongicon");
 const searchbarinputfield = document.getElementById("searchbarinputfield");
 searchsongicon.addEventListener("click", () => {

@@ -100,7 +100,6 @@ th {
 }
 
 .sidebarmenu {
-  height: 100vh;
   padding: var(--card-padding);
   display: flex;
   flex-direction: column;
@@ -145,7 +144,9 @@ th {
   border-radius: var(--border-radius-1);
 }
 
-.likedsongsdescription i {
+.songsdatabasetable table tbody tr td .green,
+.otheroptions .green,
+.likedsongsdescription .green {
   color: var(--primarygreen);
 }
 
@@ -198,7 +199,7 @@ th {
   padding: 0.4rem 1rem;
   border-radius: var(--border-radius-1);
   display: none;
-  width: 13rem;
+  width: 11rem;
   transition: all 300ms ease;
 }
 
@@ -216,7 +217,6 @@ th {
 
 .songsmaincontainer .headlinecontentarea {
   background-image: linear-gradient(var(--purpledark), var(--purplelight));
-  min-height: 30vh;
   padding: var(--card-padding);
 }
 
@@ -324,6 +324,10 @@ th {
   padding: 5px;
 }
 
+.songsdatabasetable {
+  padding: var(--card-padding);
+}
+
 .songsdatabasetable table {
   width: 100%;
   text-align: center;
@@ -336,7 +340,6 @@ th {
 .songsdatabasetable .songname {
   color: var(--whitecolor);
   font-size: 1rem;
-  font-weight: bold;
   cursor: pointer;
 }
 
@@ -344,10 +347,6 @@ th {
   background-color: var(--ultralightgrey);
   border-radius: var(--border-radius-3);
   transition: all 300ms ease;
-}
-
-.songsdatabasetable table tbody tr td i {
-  color: var(--primarygreen);
 }
 
 .songsdatabasetable table .songnamephoto {
@@ -362,6 +361,80 @@ th {
   width: 2rem;
 }
 
-.currentsongscontainer {
-  border: 1px dashed var(--primarygreen);
+.currentsongscontainer .pageheadlinearea {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--card-border-radius);
+}
+
+.pageheadlinearea .pageheadline:hover {
+  text-decoration: underline;
+}
+
+.currentplayingsongdetailscontainer {
+  padding: 0 var(--card-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.currentplayingsongpic img {
+  border-radius: var(--border-radius-1);
+}
+
+.currentplayingsongdetailssubcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.currentplayingsongdetailssubcontainer .otheroptions {
+  display: flex;
+  gap: 1rem;
+}
+
+.songdetails .albumname {
+  color: var(--secondarygrey);
+  font-weight: 600;
+}
+
+.otheroptions i {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.aboutartistcontainer {
+  padding: var(--card-padding);
+}
+
+.aboutartistcard {
+  background: #242424;
+  border-radius: var(--border-radius-2);
+  padding: var(--border-radius-3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.51rem;
+}
+
+.artistpopularitycontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.follow {
+  background: transparent;
+  border: 1px solid var(--whitecolor);
+  border-radius: var(--border-radius-2);
+  color: var(--whitecolor);
+  cursor: pointer;
+  padding: 0.41rem 0.61rem;
+  text-transform: capitalize;
+}
+
+.artistpic img {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50px;
 }
