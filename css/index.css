@@ -100,6 +100,10 @@ th {
   position: relative;
 }
 
+.parentcontainer.showhideleftdetailsarea {
+  grid-template-columns: 20rem auto;
+}
+
 .sidebarmenu {
   padding: var(--card-padding);
   display: flex;
@@ -145,9 +149,10 @@ th {
   border-radius: var(--border-radius-1);
 }
 
+.musicplayerothericons .green,
 .likedsongicon .green {
   color: var(--primarygreen);
-  font-size: 1.3rem;
+  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -359,6 +364,11 @@ th {
   width: 2rem;
 }
 
+.currentsongscontainer.showhidecurrentsongscontainer {
+  display: none;
+  transition: all 300ms ease;
+}
+
 .currentsongscontainer .pageheadlinearea {
   display: flex;
   align-items: center;
@@ -438,9 +448,9 @@ th {
 }
 
 .musicplayercontainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 20rem auto 20rem;
+  margin: 0 auto;
   gap: 1rem;
   width: 100vw;
   background: var(--darkblack);
@@ -456,8 +466,6 @@ th {
 
 .musicplayercontrolscontainer {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 
@@ -466,6 +474,7 @@ th {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  margin: 1rem 0;
 }
 
 .musicplayercontroliconscontainer .playicon,
@@ -487,4 +496,39 @@ th {
 .musicduration .musicdurationrangeinput {
   width: 50vw;
   cursor: pointer;
+}
+
+.volumehighlowinputrange {
+  max-width: 4vw;
+  margin: 0 auto;
+}
+
+.volumehighlowinputrange input {
+  width: 7vw;
+}
+
+.musicplayerothericons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 auto;
+}
+
+.musicplayerothericons .green::after {
+  content: "•";
+  position: relative;
+  top: 1rem;
+  right: 0.5rem;
+}
+
+.musicplayerothericons i:not(.green) {
+  color: var(--secondarygrey);
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.musicplayerothericons i:not(.green):hover {
+  color: var(--whitecolor);
+  transform: scale(1.12);
 }
