@@ -37,6 +37,9 @@ const currentplayingsongtitle = document.getElementsByClassName(
 const currentplayingmusicphoto = document.getElementsByClassName(
   "currentplayingmusicphoto"
 );
+const currentplayingsongalbum = document.getElementsByClassName(
+  "currentplayingsongalbum"
+);
 // ========================== songs database ==========================
 const songsdatabase = [
   {
@@ -90,13 +93,11 @@ songitemgroup.forEach((element, index) => {
 // ====================== play pause music ======================
 playmusic.addEventListener("click", () => {
   if (audioelement.duration <= 0 || audioelement.paused) {
-    console.log("music is playing");
     playmusic.classList.remove("fa-play");
     playmusic.classList.add("fa-pause");
     audioelement.play();
     speakericon.style.opacity = "1";
   } else {
-    console.log("music is paused");
     playmusic.classList.add("fa-play");
     playmusic.classList.remove("fa-pause");
     audioelement.pause();
@@ -133,6 +134,13 @@ const highlightcurrentplayingmusic = () => {
     currentplayingmusicphotogroup[0].src = songsdatabase[songindex].coverpath;
     currentplayingmusicphotogroup[1].src = songsdatabase[songindex].coverpath;
     currentplayingmusicphotogroup[2].src = songsdatabase[songindex].coverpath;
+    let currentplayingsongalbumgroup = Array.from(currentplayingsongalbum);
+    currentplayingsongalbumgroup[0].innerText =
+      songsdatabase[songindex].albumname;
+    currentplayingsongalbumgroup[1].innerText =
+      songsdatabase[songindex].albumname;
+    currentplayingsongalbumgroup[2].innerText =
+      songsdatabase[songindex].albumname;
   });
 };
 const allsongitemplay = Array.from(songitemplay);
@@ -157,6 +165,13 @@ allsongitemplay.forEach((element) => {
     currentplayingmusicphotogroup[0].src = songsdatabase[songindex].coverpath;
     currentplayingmusicphotogroup[1].src = songsdatabase[songindex].coverpath;
     currentplayingmusicphotogroup[2].src = songsdatabase[songindex].coverpath;
+    let currentplayingsongalbumgroup = Array.from(currentplayingsongalbum);
+    currentplayingsongalbumgroup[0].innerText =
+      songsdatabase[songindex].albumname;
+    currentplayingsongalbumgroup[1].innerText =
+      songsdatabase[songindex].albumname;
+    currentplayingsongalbumgroup[2].innerText =
+      songsdatabase[songindex].albumname;
   });
 });
 
@@ -183,6 +198,13 @@ previoussong.addEventListener("click", () => {
   currentplayingmusicphotogroup[0].src = songsdatabase[songindex].coverpath;
   currentplayingmusicphotogroup[1].src = songsdatabase[songindex].coverpath;
   currentplayingmusicphotogroup[2].src = songsdatabase[songindex].coverpath;
+  let currentplayingsongalbumgroup = Array.from(currentplayingsongalbum);
+  currentplayingsongalbumgroup[0].innerText =
+    songsdatabase[songindex].albumname;
+  currentplayingsongalbumgroup[1].innerText =
+    songsdatabase[songindex].albumname;
+  currentplayingsongalbumgroup[2].innerText =
+    songsdatabase[songindex].albumname;
 });
 
 nextsong.addEventListener("click", () => {
@@ -205,4 +227,11 @@ nextsong.addEventListener("click", () => {
   currentplayingmusicphotogroup[0].src = songsdatabase[songindex].coverpath;
   currentplayingmusicphotogroup[1].src = songsdatabase[songindex].coverpath;
   currentplayingmusicphotogroup[2].src = songsdatabase[songindex].coverpath;
+  let currentplayingsongalbumgroup = Array.from(currentplayingsongalbum);
+  currentplayingsongalbumgroup[0].innerText =
+    songsdatabase[songindex].albumname;
+  currentplayingsongalbumgroup[1].innerText =
+    songsdatabase[songindex].albumname;
+  currentplayingsongalbumgroup[2].innerText =
+    songsdatabase[songindex].albumname;
 });

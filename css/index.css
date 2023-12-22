@@ -455,12 +455,19 @@ th {
 
 .follow {
   background: transparent;
-  border: 1px solid var(--whitecolor);
+  border: 1px solid var(--secondarygrey);
   border-radius: var(--border-radius-2);
   color: var(--whitecolor);
   cursor: pointer;
   padding: 0.41rem 0.61rem;
   text-transform: capitalize;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.follow:hover {
+  border: 1px solid var(--whitecolor);
+  transform: scale(1.042);
 }
 
 .artistpic img {
