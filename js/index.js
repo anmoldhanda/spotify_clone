@@ -30,43 +30,46 @@ const playmusic = document.getElementById("playmusic");
 const musicprogressbar = document.getElementById("musicprogressbar");
 const songsitem = document.getElementsByClassName("songsitem");
 const speakericon = document.querySelector(".speakericon i");
-const currentplayingsongdetailscontainer = document.getElementsByClassName(
-  "currentplayingsongdetailscontainer"
-);
 const songitemplay = document.getElementsByClassName("songitemplay");
+const currentplayingsongtitle = document.getElementsByClassName(
+  "currentplayingsongtitle"
+);
+const currentplayingmusicphoto = document.getElementsByClassName(
+  "currentplayingmusicphoto"
+);
 // ========================== songs database ==========================
 const songsdatabase = [
   {
     songname: "Babydoll",
-    filepath: "music/babydoll.mp3",
+    filepath: "music/0.mp3",
     coverpath: "images/babydolllabel.png",
     minicoverpath: "images/babydollmini.png",
     albumname: "Ari Abdul",
   },
   {
     songname: "Metamorphosis",
-    filepath: "music/metamorphosis.mp3",
-    coverpath: "images/metamorphosis.png",
+    filepath: "music/1.mp3",
+    coverpath: "images/metamorphosislabel.png",
     minicoverpath: "images/metamorphosismini.png",
     albumname: "Metamorphosis",
   },
   {
     songname: "Shootout",
-    filepath: "music/shootout.mp3",
+    filepath: "music/2.mp3",
     coverpath: "images/shootoutlabel.png",
     minicoverpath: "images/shootoutmini.png",
     albumname: "Shootout",
   },
   {
     songname: "Tourner Dans La Vide",
-    filepath: "music/tournerdanslavide.mp3",
+    filepath: "music/3.mp3",
     coverpath: "images/tournerlabel.png",
     minicoverpath: "images/tournermini.png",
     albumname: "Mini World",
   },
   {
     songname: "Transgender",
-    filepath: "music/transgender.mp3",
+    filepath: "music/4.mp3",
     coverpath: "images/transgenderlabel.png",
     minicoverpath: "images/transgendermini.png",
     albumname: "(|||)",
@@ -78,17 +81,6 @@ let songitemgroup = Array.from(songsitem);
 songitemgroup.forEach((element, index) => {
   element.getElementsByClassName("songpic")[0].src =
     songsdatabase[index].minicoverpath;
-  element.getElementsByClassName("songname")[0].innerText =
-    songsdatabase[index].songname;
-  element.getElementsByClassName("albumname")[0].innerText =
-    songsdatabase[index].albumname;
-});
-
-// ====================== left panel artist details from songsdatabase ======================
-let leftpaneldetails = Array.from(currentplayingsongdetailscontainer);
-leftpaneldetails.forEach((element, index) => {
-  element.getElementsByClassName("leftpanelpic")[0].src =
-    songsdatabase[index].coverpath;
   element.getElementsByClassName("songname")[0].innerText =
     songsdatabase[index].songname;
   element.getElementsByClassName("albumname")[0].innerText =
@@ -131,6 +123,16 @@ const highlightcurrentplayingmusic = () => {
   allsongitemplay.forEach((element) => {
     let unhighlight = element.nextElementSibling.lastElementChild;
     unhighlight.classList.remove("highlightcurrentplayingmusic");
+    // show the music information of the new playing song
+    let currentplayingsongtitlegroup = Array.from(currentplayingsongtitle);
+    currentplayingsongtitlegroup[0].innerText =
+      songsdatabase[songindex].songname;
+    currentplayingsongtitlegroup[1].innerText =
+      songsdatabase[songindex].songname;
+    let currentplayingmusicphotogroup = Array.from(currentplayingmusicphoto);
+    currentplayingmusicphotogroup[0].src = songsdatabase[songindex].coverpath;
+    currentplayingmusicphotogroup[1].src = songsdatabase[songindex].coverpath;
+    currentplayingmusicphotogroup[2].src = songsdatabase[songindex].coverpath;
   });
 };
 const allsongitemplay = Array.from(songitemplay);
@@ -145,6 +147,16 @@ allsongitemplay.forEach((element) => {
     audioelement.play();
     playmusic.classList.remove("fa-play");
     playmusic.classList.add("fa-pause");
+    // show the music information of the new playing song
+    let currentplayingsongtitlegroup = Array.from(currentplayingsongtitle);
+    currentplayingsongtitlegroup[0].innerText =
+      songsdatabase[songindex].songname;
+    currentplayingsongtitlegroup[1].innerText =
+      songsdatabase[songindex].songname;
+    let currentplayingmusicphotogroup = Array.from(currentplayingmusicphoto);
+    currentplayingmusicphotogroup[0].src = songsdatabase[songindex].coverpath;
+    currentplayingmusicphotogroup[1].src = songsdatabase[songindex].coverpath;
+    currentplayingmusicphotogroup[2].src = songsdatabase[songindex].coverpath;
   });
 });
 
@@ -163,6 +175,14 @@ previoussong.addEventListener("click", () => {
   playmusic.classList.remove("fa-play");
   playmusic.classList.add("fa-pause");
   speakericon.style.opacity = 1;
+  // show the music information of the new playing song
+  let currentplayingsongtitlegroup = Array.from(currentplayingsongtitle);
+  currentplayingsongtitlegroup[0].innerText = songsdatabase[songindex].songname;
+  currentplayingsongtitlegroup[1].innerText = songsdatabase[songindex].songname;
+  let currentplayingmusicphotogroup = Array.from(currentplayingmusicphoto);
+  currentplayingmusicphotogroup[0].src = songsdatabase[songindex].coverpath;
+  currentplayingmusicphotogroup[1].src = songsdatabase[songindex].coverpath;
+  currentplayingmusicphotogroup[2].src = songsdatabase[songindex].coverpath;
 });
 
 nextsong.addEventListener("click", () => {
@@ -177,4 +197,12 @@ nextsong.addEventListener("click", () => {
   playmusic.classList.remove("fa-play");
   playmusic.classList.add("fa-pause");
   speakericon.style.opacity = 1;
+  // show the music information of the new playing song
+  let currentplayingsongtitlegroup = Array.from(currentplayingsongtitle);
+  currentplayingsongtitlegroup[0].innerText = songsdatabase[songindex].songname;
+  currentplayingsongtitlegroup[1].innerText = songsdatabase[songindex].songname;
+  let currentplayingmusicphotogroup = Array.from(currentplayingmusicphoto);
+  currentplayingmusicphotogroup[0].src = songsdatabase[songindex].coverpath;
+  currentplayingmusicphotogroup[1].src = songsdatabase[songindex].coverpath;
+  currentplayingmusicphotogroup[2].src = songsdatabase[songindex].coverpath;
 });
