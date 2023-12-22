@@ -1,4 +1,4 @@
-// open close search bar for search library input field
+// ============= open close search bar for search library input field =============
 const searchsongicon = document.getElementById("searchsongicon");
 const searchbarinputfield = document.getElementById("searchbarinputfield");
 searchsongicon.addEventListener("click", () => {
@@ -11,7 +11,7 @@ searchbarinputfield.addEventListener("blur", () => {
   searchsongicon.style.display = "block";
 });
 
-// show hide the current playing songs containr left side panel
+// ============= show hide the current playing songs containr left side panel =============
 const parentcontainer = document.querySelector(".parentcontainer");
 const currentsongscontainer = document.querySelector(".currentsongscontainer");
 const currentplayingsongiconindicator = document.getElementById(
@@ -21,4 +21,130 @@ currentplayingsongiconindicator.addEventListener("click", () => {
   parentcontainer.classList.toggle("showhideleftdetailsarea");
   currentsongscontainer.classList.toggle("showhidecurrentsongscontainer");
   currentplayingsongiconindicator.classList.toggle("green");
+});
+
+let songindex = 0;
+// ========================== audio api ==========================
+const audioelement = new Audio("music/babydoll.mp3");
+const playmusic = document.getElementById("playmusic");
+const musicprogressbar = document.getElementById("musicprogressbar");
+const songsitem = document.getElementsByClassName("songsitem");
+const speakericon = document.querySelector(".speakericon i");
+const currentplayingsongdetailscontainer = document.getElementsByClassName(
+  "currentplayingsongdetailscontainer"
+);
+const songitemplay = document.getElementsByClassName("songitemplay");
+// ========================== songs database ==========================
+const songsdatabase = [
+  {
+    songname: "Babydoll",
+    filepath: "music/babydoll.mp3",
+    coverpath: "images/babydolllabel.png",
+    minicoverpath: "images/babydollmini.png",
+    albumname: "Ari Abdul",
+  },
+  {
+    songname: "Metamorphosis",
+    filepath: "music/metamorphosis.mp3",
+    coverpath: "images/metamorphosis.png",
+    minicoverpath: "images/metamorphosismini.png",
+    albumname: "Metamorphosis",
+  },
+  {
+    songname: "Shootout",
+    filepath: "music/shootout.mp3",
+    coverpath: "images/shootoutlabel.png",
+    minicoverpath: "images/shootoutmini.png",
+    albumname: "Shootout",
+  },
+  {
+    songname: "Tourner Dans La Vide",
+    filepath: "music/tournerdanslavide.mp3",
+    coverpath: "images/tournerlabel.png",
+    minicoverpath: "images/tournermini.png",
+    albumname: "Mini World",
+  },
+  {
+    songname: "Transgender",
+    filepath: "music/transgender.mp3",
+    coverpath: "images/transgenderlabel.png",
+    minicoverpath: "images/transgendermini.png",
+    albumname: "(|||)",
+  },
+];
+
+// ====================== songs colum details from songsdatabase ======================
+let songitemgroup = Array.from(songsitem);
+songitemgroup.forEach((element, index) => {
+  element.getElementsByClassName("songpic")[0].src =
+    songsdatabase[index].minicoverpath;
+  element.getElementsByClassName("songname")[0].innerText =
+    songsdatabase[index].songname;
+  element.getElementsByClassName("albumname")[0].innerText =
+    songsdatabase[index].albumname;
+});
+
+// ====================== left panel artist details from songsdatabase ======================
+let leftpaneldetails = Array.from(currentplayingsongdetailscontainer);
+leftpaneldetails.forEach((element, index) => {
+  element.getElementsByClassName("leftpanelpic")[0].src =
+    songsdatabase[index].coverpath;
+  element.getElementsByClassName("songname")[0].innerText =
+    songsdatabase[index].songname;
+  element.getElementsByClassName("albumname")[0].innerText =
+    songsdatabase[index].albumname;
+});
+
+// ====================== play pause music ======================
+playmusic.addEventListener("click", () => {
+  if (audioelement.duration <= 0 || audioelement.paused) {
+    console.log("music is playing");
+    playmusic.classList.remove("fa-play");
+    playmusic.classList.add("fa-pause");
+    audioelement.play();
+    speakericon.style.opacity = "1";
+  } else {
+    console.log("music is paused");
+    playmusic.classList.add("fa-play");
+    playmusic.classList.remove("fa-pause");
+    audioelement.pause();
+    speakericon.style.opacity = "0";
+  }
+});
+
+// ====================== music to work with the progressbar ======================
+audioelement.addEventListener("timeupdate", () => {
+  let progress = Number.parseInt(
+    (audioelement.currentTime / audioelement.duration) * 100
+  );
+  musicprogressbar.value = progress;
+});
+
+// ============ update the progress bar with music if the user changes the current music length ============
+musicprogressbar.addEventListener("change", () => {
+  audioelement.currentTime =
+    (musicprogressbar.value * audioelement.duration) / 100;
+});
+
+// ====================== highlight the current playing music ======================
+const highlightcurrentplayingmusic = () => {
+  allsongitemplay.forEach((element) => {
+    let unhighlight = element.nextElementSibling.lastElementChild;
+    unhighlight.classList.remove("highlightcurrentplayingmusic");
+  });
+};
+const allsongitemplay = Array.from(songitemplay);
+allsongitemplay.forEach((element) => {
+  element.addEventListener("click", (e) => {
+    let highlight = e.target.nextElementSibling.lastElementChild;
+    highlightcurrentplayingmusic();
+    index = Number.parseInt(e.target.id);
+    console.log(index);
+    highlight.classList.add("highlightcurrentplayingmusic");
+    audioelement.src = `music/${index}.mp3`;
+    audioelement.currentTime = 0;
+    audioelement.play();
+    playmusic.classList.remove("fa-play");
+    playmusic.classList.add("fa-pause");
+  });
 });

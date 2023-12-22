@@ -69,6 +69,9 @@
               <i class="fa-solid fa-music"></i> Playlist 11 songs
             </p>
           </div>
+          <div class="speakericon">
+            <i class="fa-solid fa-volume-high"></i>
+          </div>
         </div>
       </aside>
       <!-- ====================== songs list ====================== -->
@@ -130,90 +133,87 @@
           </div>
         </div>
         <div class="songsdatabasetable">
-          <table>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Title</th>
-                <th>Album</th>
-                <th>Date Added</th>
-                <th></th>
-                <th><i class="fa-solid fa-clock" aria-hidden="true"></i></th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- ====================== first song ====================== -->
-              <tr>
-                <td>1</td>
-                <td class="songnamephoto">
-                  <div class="songphoto">
-                    <img src="images/babydollmini.png" alt="song" />
-                  </div>
-                  <div class="songname">Babydoll</div>
-                </td>
-                <td>Babydoll</td>
-                <td>6 days ago</td>
-                <td><i class="fa-solid fa-heart green"></i></td>
-                <td>3:16</td>
-              </tr>
-              <!-- ====================== second song ====================== -->
-              <tr>
-                <td>2</td>
-                <td class="songnamephoto">
-                  <div class="songphoto">
-                    <img src="images/tournermini.png" alt="song" />
-                  </div>
-                  <div class="songname">Tourner Dans La Vide</div>
-                </td>
-                <td>Tourner Dans La Vide</td>
-                <td>6 days ago</td>
-                <td><i class="fa-solid fa-heart green"></i></td>
-                <td>3:16</td>
-              </tr>
-              <!-- ====================== third song ====================== -->
-              <tr>
-                <td>3</td>
-                <td class="songnamephoto">
-                  <div class="songphoto">
-                    <img src="images/transgendermini.png" alt="song" />
-                  </div>
-                  <div class="songname">Transgender</div>
-                </td>
-                <td>Transgender</td>
-                <td>6 days ago</td>
-                <td><i class="fa-solid fa-heart green"></i></td>
-                <td>3:16</td>
-              </tr>
-              <!-- ====================== fourth song ====================== -->
-              <tr>
-                <td>4</td>
-                <td class="songnamephoto">
-                  <div class="songphoto">
-                    <img src="images/shootoutmini.png" alt="song" />
-                  </div>
-                  <div class="songname">Shootout</div>
-                </td>
-                <td>Shootout</td>
-                <td>6 days ago</td>
-                <td><i class="fa-solid fa-heart green"></i></td>
-                <td>3:16</td>
-              </tr>
-              <!-- ====================== fifth song ====================== -->
-              <tr>
-                <td>5</td>
-                <td class="songnamephoto">
-                  <div class="songphoto">
-                    <img src="images/metamorphosismini.png" alt="song" />
-                  </div>
-                  <div class="songname">Metamorphosis</div>
-                </td>
-                <td>Metamorphosis</td>
-                <td>6 days ago</td>
-                <td><i class="fa-solid fa-heart green"></i></td>
-                <td>3:16</td>
-              </tr>
-            </tbody>
-          </table>
+          <!-- ====================== songs headline ====================== -->
+          <div class="songslistheadlinecontainer">
+            <div class="songslistheadline">#</div>
+            <div class="songslistheadline">Title</div>
+            <div class="songslistheadline">Album</div>
+            <div class="songslistheadline">Date Added</div>
+            <div class="songslistheadline"></div>
+            <div class="songslistheadline">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+            </div>
+          </div>
+          <!-- ====================== first song ====================== -->
+          <div class="songsitem">
+            <div class="songitemplay" id="0">1</div>
+            <div class="songnamephoto">
+              <div class="songphoto">
+                <img alt="song cover photo" class="songpic" />
+              </div>
+              <div class="songname"></div>
+            </div>
+            <div class="albumname"></div>
+            <div class="songreleased">5 days ago</div>
+            <div class="likedsong"><i class="fa-solid fa-heart green"></i></div>
+            <div class="songduration">3.16</div>
+          </div>
+          <!-- ====================== second song ====================== -->
+          <div class="songsitem">
+            <div class="songitemplay" id="1">2</div>
+            <div class="songnamephoto">
+              <div class="songphoto">
+                <img alt="song cover photo" class="songpic" />
+              </div>
+              <div class="songname"></div>
+            </div>
+            <div class="albumname"></div>
+            <div class="songreleased">5 days ago</div>
+            <div class="likedsong"><i class="fa-solid fa-heart green"></i></div>
+            <div class="songduration">3.16</div>
+          </div>
+          <!-- ====================== third song ====================== -->
+          <div class="songsitem">
+            <div class="songitemplay" id="2">3</div>
+            <div class="songnamephoto">
+              <div class="songphoto">
+                <img alt="song cover photo" class="songpic" />
+              </div>
+              <div class="songname"></div>
+            </div>
+            <div class="albumname"></div>
+            <div class="songreleased">5 days ago</div>
+            <div class="likedsong"><i class="fa-solid fa-heart green"></i></div>
+            <div class="songduration">3.16</div>
+          </div>
+          <!-- ====================== fourth song ====================== -->
+          <div class="songsitem">
+            <div class="songitemplay" id="3">4</div>
+            <div class="songnamephoto">
+              <div class="songphoto">
+                <img alt="song cover photo" class="songpic" />
+              </div>
+              <div class="songname"></div>
+            </div>
+            <div class="albumname"></div>
+            <div class="songreleased">5 days ago</div>
+            <div class="likedsong"><i class="fa-solid fa-heart green"></i></div>
+            <div class="songduration">3.16</div>
+          </div>
+          <!-- ====================== fifth song ====================== -->
+          <div class="songsitem">
+            <div class="songitemplay" id="4">5</div>
+            <div class="songnamephoto">
+              <div class="songphoto">
+                <img alt="song cover photo" class="songpic" />
+              </div>
+              <div class="songname"></div>
+            </div>
+            <div class="albumname"></div>
+            <div class="songreleased">5 days ago</div>
+            <div class="likedsong"><i class="fa-solid fa-heart green"></i></div>
+            <div class="songduration">3.16</div>
+          </div>
         </div>
       </main>
       <!-- ====================== current songs details ====================== -->
@@ -224,12 +224,12 @@
         </div>
         <div class="currentplayingsongdetailscontainer">
           <div class="currentplayingsongpic">
-            <img src="images/babydolllabel.png" alt="" />
+            <img alt="" class="leftpanelpic" />
           </div>
           <div class="currentplayingsongdetailssubcontainer">
             <div class="songdetails">
-              <h2 class="songname">Babydoll</h2>
-              <h3 class="albumname">NBSPLV</h3>
+              <h2 class="songname"></h2>
+              <h3 class="albumname"></h3>
             </div>
             <div class="otheroptions">
               <i class="fa-solid fa-heart green"></i>
@@ -272,15 +272,25 @@
         </div>
         <div class="musicplayercontrolscontainer">
           <div class="musicplayercontroliconscontainer">
-            <i class="fa-solid fa-backward-step stepbackwardicon"></i>
+            <i
+              class="fa-solid fa-backward-step stepbackwardicon"
+              id="previoussong"
+            ></i>
             <!-- <i class="fa-solid fa-pause pauseicon"></i> -->
-            <i class="fa-solid fa-play playicon"></i>
-            <i class="fa-solid fa-forward-step stepforwardicon"></i>
+            <i class="fa-solid fa-play playicon" id="playmusic"></i>
+            <i
+              class="fa-solid fa-forward-step stepforwardicon"
+              id="nextsong"
+            ></i>
           </div>
           <div class="musicduration">
             <input
               type="range"
               name="musicrange"
+              min="0"
+              value="0"
+              max="100"
+              id="musicprogressbar"
               class="musicdurationrangeinput"
             />
           </div>
