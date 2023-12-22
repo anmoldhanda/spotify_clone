@@ -25,7 +25,7 @@ currentplayingsongiconindicator.addEventListener("click", () => {
 
 let songindex = 0;
 // ========================== audio api ==========================
-const audioelement = new Audio("music/babydoll.mp3");
+const audioelement = new Audio(`music/${songindex}.mp3`);
 const playmusic = document.getElementById("playmusic");
 const musicprogressbar = document.getElementById("musicprogressbar");
 const songsitem = document.getElementsByClassName("songsitem");
@@ -138,13 +138,43 @@ allsongitemplay.forEach((element) => {
   element.addEventListener("click", (e) => {
     let highlight = e.target.nextElementSibling.lastElementChild;
     highlightcurrentplayingmusic();
-    index = Number.parseInt(e.target.id);
-    console.log(index);
+    songindex = Number.parseInt(e.target.id);
     highlight.classList.add("highlightcurrentplayingmusic");
-    audioelement.src = `music/${index}.mp3`;
+    audioelement.src = `music/${songindex}.mp3`;
     audioelement.currentTime = 0;
     audioelement.play();
     playmusic.classList.remove("fa-play");
     playmusic.classList.add("fa-pause");
   });
+});
+
+// ===================== handle previous next song ===================
+const previoussong = document.getElementById("previoussong");
+const nextsong = document.getElementById("nextsong");
+previoussong.addEventListener("click", () => {
+  if (songindex <= 0) {
+    songindex = 0;
+  } else {
+    songindex -= 1;
+  }
+  audioelement.src = `music/${songindex}.mp3`;
+  audioelement.currentTime = 0;
+  audioelement.play();
+  playmusic.classList.remove("fa-play");
+  playmusic.classList.add("fa-pause");
+  speakericon.style.opacity = 1;
+});
+
+nextsong.addEventListener("click", () => {
+  if (songindex >= 5) {
+    songindex = 0;
+  } else {
+    songindex += 1;
+  }
+  audioelement.src = `music/${songindex}.mp3`;
+  audioelement.currentTime = 0;
+  audioelement.play();
+  playmusic.classList.remove("fa-play");
+  playmusic.classList.add("fa-pause");
+  speakericon.style.opacity = 1;
 });
