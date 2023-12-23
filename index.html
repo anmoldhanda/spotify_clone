@@ -33,7 +33,13 @@
         </div>
         <div class="librarycontainer">
           <div class="librarysubcontainer">
-            <h2><i class="fa-solid fa-bars-progress"></i> Your Library</h2>
+            <div class="opencloselibrary">
+              <i
+                class="fa-solid fa-bars-progress"
+                id="showhidesidebarlibarary"
+              ></i>
+              <h2>Your Library</h2>
+            </div>
             <div class="libraryindicatoricons">
               <i class="fa-solid fa-plus"></i>
               <i class="fa-solid fa-arrow-right"></i>
@@ -124,7 +130,7 @@
         </div>
         <div class="playlistsongindicatorcontainer">
           <div class="playicon">
-            <i class="fa-solid fa-play"></i>
+            <i class="fa-solid fa-play" id="playmusicgreenbtn"></i>
           </div>
           <div class="songplaylistdiv">
             <button class="recentactivityindicatorbtn">
@@ -144,79 +150,91 @@
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
             </div>
           </div>
-          <!-- ====================== first song ====================== -->
-          <div class="songsitem">
-            <div class="songitemplay" id="0">1</div>
-            <div class="songnamephoto">
-              <div class="songphoto">
-                <img alt="song cover photo" class="songpic" />
+          <div class="songitemscontainer">
+            <!-- ====================== first song ====================== -->
+            <div class="songsitem">
+              <div class="songitemplay" id="0">1</div>
+              <div class="songnamephoto">
+                <div class="songphoto">
+                  <img alt="song cover photo" class="songpic" />
+                </div>
+                <div class="songname"></div>
               </div>
-              <div class="songname"></div>
-            </div>
-            <div class="albumname"></div>
-            <div class="songreleased">5 days ago</div>
-            <div class="likedsong"><i class="fa-solid fa-heart green"></i></div>
-            <div class="songduration">3.16</div>
-          </div>
-          <!-- ====================== second song ====================== -->
-          <div class="songsitem">
-            <div class="songitemplay" id="1">2</div>
-            <div class="songnamephoto">
-              <div class="songphoto">
-                <img alt="song cover photo" class="songpic" />
+              <div class="albumname"></div>
+              <div class="songreleased">5 days ago</div>
+              <div class="likedsong">
+                <i class="fa-solid fa-heart green"></i>
               </div>
-              <div class="songname"></div>
+              <div class="songduration">3.16</div>
             </div>
-            <div class="albumname"></div>
-            <div class="songreleased">5 days ago</div>
-            <div class="likedsong"><i class="fa-solid fa-heart green"></i></div>
-            <div class="songduration">3.16</div>
-          </div>
-          <!-- ====================== third song ====================== -->
-          <div class="songsitem">
-            <div class="songitemplay" id="2">3</div>
-            <div class="songnamephoto">
-              <div class="songphoto">
-                <img alt="song cover photo" class="songpic" />
+            <!-- ====================== second song ====================== -->
+            <div class="songsitem">
+              <div class="songitemplay" id="1">2</div>
+              <div class="songnamephoto">
+                <div class="songphoto">
+                  <img alt="song cover photo" class="songpic" />
+                </div>
+                <div class="songname"></div>
               </div>
-              <div class="songname"></div>
-            </div>
-            <div class="albumname"></div>
-            <div class="songreleased">5 days ago</div>
-            <div class="likedsong"><i class="fa-solid fa-heart green"></i></div>
-            <div class="songduration">3.16</div>
-          </div>
-          <!-- ====================== fourth song ====================== -->
-          <div class="songsitem">
-            <div class="songitemplay" id="3">4</div>
-            <div class="songnamephoto">
-              <div class="songphoto">
-                <img alt="song cover photo" class="songpic" />
+              <div class="albumname"></div>
+              <div class="songreleased">5 days ago</div>
+              <div class="likedsong">
+                <i class="fa-solid fa-heart green"></i>
               </div>
-              <div class="songname"></div>
+              <div class="songduration">3.16</div>
             </div>
-            <div class="albumname"></div>
-            <div class="songreleased">5 days ago</div>
-            <div class="likedsong"><i class="fa-solid fa-heart green"></i></div>
-            <div class="songduration">3.16</div>
-          </div>
-          <!-- ====================== fifth song ====================== -->
-          <div class="songsitem">
-            <div class="songitemplay" id="4">5</div>
-            <div class="songnamephoto">
-              <div class="songphoto">
-                <img alt="song cover photo" class="songpic" />
+            <!-- ====================== third song ====================== -->
+            <div class="songsitem">
+              <div class="songitemplay" id="2">3</div>
+              <div class="songnamephoto">
+                <div class="songphoto">
+                  <img alt="song cover photo" class="songpic" />
+                </div>
+                <div class="songname"></div>
               </div>
-              <div class="songname"></div>
+              <div class="albumname"></div>
+              <div class="songreleased">5 days ago</div>
+              <div class="likedsong">
+                <i class="fa-solid fa-heart green"></i>
+              </div>
+              <div class="songduration">3.16</div>
             </div>
-            <div class="albumname"></div>
-            <div class="songreleased">5 days ago</div>
-            <div class="likedsong"><i class="fa-solid fa-heart green"></i></div>
-            <div class="songduration">3.16</div>
+            <!-- ====================== fourth song ====================== -->
+            <div class="songsitem">
+              <div class="songitemplay" id="3">4</div>
+              <div class="songnamephoto">
+                <div class="songphoto">
+                  <img alt="song cover photo" class="songpic" />
+                </div>
+                <div class="songname"></div>
+              </div>
+              <div class="albumname"></div>
+              <div class="songreleased">5 days ago</div>
+              <div class="likedsong">
+                <i class="fa-solid fa-heart green"></i>
+              </div>
+              <div class="songduration">3.16</div>
+            </div>
+            <!-- ====================== fifth song ====================== -->
+            <div class="songsitem">
+              <div class="songitemplay" id="4">5</div>
+              <div class="songnamephoto">
+                <div class="songphoto">
+                  <img alt="song cover photo" class="songpic" />
+                </div>
+                <div class="songname"></div>
+              </div>
+              <div class="albumname"></div>
+              <div class="songreleased">5 days ago</div>
+              <div class="likedsong">
+                <i class="fa-solid fa-heart green"></i>
+              </div>
+              <div class="songduration">3.16</div>
+            </div>
           </div>
         </div>
       </main>
-      <!-- ====================== current songs details ====================== -->
+      <!-- ====================== current songs details left panel ====================== -->
       <section class="currentsongscontainer">
         <div class="pageheadlinearea">
           <a href="#"><h3 class="pageheadline">Liked Songs</h3></a>
@@ -265,6 +283,7 @@
           </div>
         </div>
       </section>
+      <!-- ====================== music player controls container ====================== -->
       <footer class="musicplayercontainer">
         <div class="likedsongscontainer">
           <div class="likedsongspic">

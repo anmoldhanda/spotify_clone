@@ -11,7 +11,7 @@ searchbarinputfield.addEventListener("blur", () => {
   searchsongicon.style.display = "block";
 });
 
-// ============= show hide the current playing songs containr left side panel =============
+// ============= show hide the current playing songs containr right side panel =============
 const parentcontainer = document.querySelector(".parentcontainer");
 const currentsongscontainer = document.querySelector(".currentsongscontainer");
 const currentplayingsongiconindicator = document.getElementById(
@@ -21,12 +21,56 @@ currentplayingsongiconindicator.addEventListener("click", () => {
   parentcontainer.classList.toggle("showhideleftdetailsarea");
   currentsongscontainer.classList.toggle("showhidecurrentsongscontainer");
   currentplayingsongiconindicator.classList.toggle("green");
+  // ============= if the screen is showing the current playing song indicator right side panel then it will show it and hide the songs library left panel along with its elements =============
+  parentcontainer.classList.remove("showhidesidebarlibrary");
+  sidenavheadline.forEach((headline) => {
+    headline.classList.remove("active");
+  });
+  opencloselibraryheadline.classList.remove("active");
+  playlistsbtn.classList.remove("active");
+  sidemenulikesongbox.classList.remove("active");
+  recentactivitycontainer.classList.remove("active");
+  libraryindicatoricons.classList.remove("active");
+});
+
+// ============= show hide the songs library left side panel =============
+const showhidesidebarlibarary = document.getElementById(
+  "showhidesidebarlibarary"
+);
+const sidebarnavlinkheadline = document.querySelectorAll(
+  ".sidebarnavigation .sidebarlinks h2"
+);
+const sidenavheadline = Array.from(sidebarnavlinkheadline);
+const opencloselibraryheadline = document.querySelector(".opencloselibrary h2");
+const playlistsbtn = document.querySelector(".playlistsbtn");
+const sidemenulikesongbox = document.querySelector(
+  ".sidebarmenu .likedsongscontainer"
+);
+const recentactivitycontainer = document.querySelector(
+  ".recentactivitycontainer"
+);
+const libraryindicatoricons = document.querySelector(".libraryindicatoricons");
+showhidesidebarlibarary.addEventListener("click", () => {
+  parentcontainer.classList.toggle("showhidesidebarlibrary");
+  sidenavheadline.forEach((headline) => {
+    headline.classList.toggle("active");
+  });
+  opencloselibraryheadline.classList.toggle("active");
+  playlistsbtn.classList.toggle("active");
+  sidemenulikesongbox.classList.toggle("active");
+  recentactivitycontainer.classList.toggle("active");
+  libraryindicatoricons.classList.toggle("active");
+  // ============= if the screen is showing the song library left panel then it will show it and hide the current playing songs indicator right panel along with its elements =============
+  parentcontainer.classList.remove("showhideleftdetailsarea");
+  currentsongscontainer.classList.remove("showhidecurrentsongscontainer");
+  currentplayingsongiconindicator.classList.remove("green");
 });
 
 let songindex = 0;
 // ========================== audio api ==========================
 const audioelement = new Audio(`music/${songindex}.mp3`);
 const playmusic = document.getElementById("playmusic");
+const playmusicgreenbtn = document.getElementById("playmusicgreenbtn");
 const musicprogressbar = document.getElementById("musicprogressbar");
 const songsitem = document.getElementsByClassName("songsitem");
 const speakericon = document.querySelector(".speakericon i");
@@ -95,13 +139,28 @@ playmusic.addEventListener("click", () => {
   if (audioelement.duration <= 0 || audioelement.paused) {
     playmusic.classList.remove("fa-play");
     playmusic.classList.add("fa-pause");
-    audioelement.play();
     speakericon.style.opacity = "1";
+    audioelement.play();
   } else {
     playmusic.classList.add("fa-play");
     playmusic.classList.remove("fa-pause");
-    audioelement.pause();
     speakericon.style.opacity = "0";
+    audioelement.pause();
+  }
+});
+
+// ====================== play pause music green icon ======================
+playmusicgreenbtn.addEventListener("click", () => {
+  if (audioelement.duration <= 0 || audioelement.paused) {
+    speakericon.style.opacity = "1";
+    playmusic.classList.remove("fa-play");
+    playmusic.classList.add("fa-pause");
+    audioelement.play();
+  } else {
+    speakericon.style.opacity = "0";
+    playmusic.classList.add("fa-play");
+    playmusic.classList.remove("fa-pause");
+    audioelement.pause();
   }
 });
 
@@ -124,7 +183,8 @@ const highlightcurrentplayingmusic = () => {
   allsongitemplay.forEach((element) => {
     let unhighlight = element.nextElementSibling.lastElementChild;
     unhighlight.classList.remove("highlightcurrentplayingmusic");
-    // show the music information of the new playing song
+    speakericon.style.opacity = 0;
+    // show the music information of the current playing song
     let currentplayingsongtitlegroup = Array.from(currentplayingsongtitle);
     currentplayingsongtitlegroup[0].innerText =
       songsdatabase[songindex].songname;
@@ -155,7 +215,8 @@ allsongitemplay.forEach((element) => {
     audioelement.play();
     playmusic.classList.remove("fa-play");
     playmusic.classList.add("fa-pause");
-    // show the music information of the new playing song
+    speakericon.style.opacity = 1;
+    // show the music information of the current playing song
     let currentplayingsongtitlegroup = Array.from(currentplayingsongtitle);
     currentplayingsongtitlegroup[0].innerText =
       songsdatabase[songindex].songname;
@@ -190,7 +251,7 @@ previoussong.addEventListener("click", () => {
   playmusic.classList.remove("fa-play");
   playmusic.classList.add("fa-pause");
   speakericon.style.opacity = 1;
-  // show the music information of the new playing song
+  // show the music information of the current playing song
   let currentplayingsongtitlegroup = Array.from(currentplayingsongtitle);
   currentplayingsongtitlegroup[0].innerText = songsdatabase[songindex].songname;
   currentplayingsongtitlegroup[1].innerText = songsdatabase[songindex].songname;
@@ -219,7 +280,7 @@ nextsong.addEventListener("click", () => {
   playmusic.classList.remove("fa-play");
   playmusic.classList.add("fa-pause");
   speakericon.style.opacity = 1;
-  // show the music information of the new playing song
+  // show the music information of the current playing song
   let currentplayingsongtitlegroup = Array.from(currentplayingsongtitle);
   currentplayingsongtitlegroup[0].innerText = songsdatabase[songindex].songname;
   currentplayingsongtitlegroup[1].innerText = songsdatabase[songindex].songname;
