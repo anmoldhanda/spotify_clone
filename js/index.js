@@ -1,4 +1,4 @@
-// ============= open close search bar for search library input field =============
+// ============= open search bar for search library input field =============
 const searchsongicon = document.getElementById("searchsongicon");
 const searchbarinputfield = document.getElementById("searchbarinputfield");
 searchsongicon.addEventListener("click", () => {
@@ -6,9 +6,23 @@ searchsongicon.addEventListener("click", () => {
   searchsongicon.style.display = "none";
 });
 
+// ============= close search bar for search library input field =============
 searchbarinputfield.addEventListener("blur", () => {
   searchbarinputfield.style.display = "none";
   searchsongicon.style.display = "block";
+});
+
+// search bar functionality if the user's searched song is present then show the filtered result otherwise empty the container as result
+searchbarinputfield.addEventListener("keyup", (e) => {
+  let searchterm = searchbarinputfield.value.toLowerCase();
+  let allsongscolumn = Array.from(songsitem).forEach((singlesongcolumn) => {
+    let singlesongcolumntext = singlesongcolumn.textContent.toLowerCase();
+    if (singlesongcolumntext.includes(searchterm)) {
+      singlesongcolumn.style.display = "flex";
+    } else {
+      singlesongcolumn.style.display = "none";
+    }
+  });
 });
 
 // ============= show hide the current playing songs containr right side panel =============
