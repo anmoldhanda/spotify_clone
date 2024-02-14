@@ -1,4 +1,4 @@
-// ============= open search bar for search library input field =============
+// ========================== open search bar for search library input field ==========================
 const searchsongicon = document.getElementById("searchsongicon");
 const searchbarinputfield = document.getElementById("searchbarinputfield");
 searchsongicon.addEventListener("click", () => {
@@ -6,13 +6,13 @@ searchsongicon.addEventListener("click", () => {
   searchsongicon.style.display = "none";
 });
 
-// ============= close search bar for search library input field =============
+// ========================== close search bar for search library input field ==========================
 searchbarinputfield.addEventListener("blur", () => {
   searchbarinputfield.style.display = "none";
   searchsongicon.style.display = "block";
 });
 
-// search bar functionality if the user's searched song is present then show the filtered result otherwise empty the container as result
+// ============= search bar functionality if the user's searched song is present then show the filtered result otherwise empty the container as result =============
 searchbarinputfield.addEventListener("keyup", (e) => {
   let searchterm = searchbarinputfield.value.toLowerCase();
   let allsongscolumn = Array.from(songsitem).forEach((singlesongcolumn) => {
@@ -25,7 +25,7 @@ searchbarinputfield.addEventListener("keyup", (e) => {
   });
 });
 
-// ============= show hide the current playing songs containr right side panel =============
+// ===================== show hide the current playing songs containr right side panel =====================
 const parentcontainer = document.querySelector(".parentcontainer");
 const currentsongscontainer = document.querySelector(".currentsongscontainer");
 const currentplayingsongiconindicator = document.getElementById(
@@ -47,7 +47,7 @@ currentplayingsongiconindicator.addEventListener("click", () => {
   libraryindicatoricons.classList.remove("active");
 });
 
-// ============= show hide the songs library left side panel =============
+// ========================== show hide the songs library left side panel ==========================
 const showhidesidebarlibarary = document.getElementById(
   "showhidesidebarlibarary"
 );
@@ -81,7 +81,7 @@ showhidesidebarlibarary.addEventListener("click", () => {
 });
 
 let songindex = 0;
-// ========================== audio api ==========================
+// ============================================== audio api ==============================================
 const audioelement = new Audio(`music/${songindex}.mp3`);
 const playmusic = document.getElementById("playmusic");
 const playmusicgreenbtn = document.getElementById("playmusicgreenbtn");
@@ -98,7 +98,7 @@ const currentplayingmusicphoto = document.getElementsByClassName(
 const currentplayingsongalbum = document.getElementsByClassName(
   "currentplayingsongalbum"
 );
-// ========================== songs database ==========================
+// ======================================= songs database =======================================
 const songsdatabase = [
   {
     songname: "Babydoll",
@@ -137,7 +137,7 @@ const songsdatabase = [
   },
 ];
 
-// ====================== songs colum details from songsdatabase ======================
+// ================================ songs colum details from songsdatabase ================================
 let songitemgroup = Array.from(songsitem);
 songitemgroup.forEach((element, index) => {
   element.getElementsByClassName("songpic")[0].src =
@@ -148,7 +148,7 @@ songitemgroup.forEach((element, index) => {
     songsdatabase[index].albumname;
 });
 
-// ====================== play pause music ======================
+// =================================== play pause music ===================================
 playmusic.addEventListener("click", () => {
   if (audioelement.duration <= 0 || audioelement.paused) {
     playmusic.classList.remove("fa-play");
@@ -163,7 +163,7 @@ playmusic.addEventListener("click", () => {
   }
 });
 
-// ====================== play pause music green icon ======================
+// =================================== play pause music green icon ===================================
 playmusicgreenbtn.addEventListener("click", () => {
   if (audioelement.duration <= 0 || audioelement.paused) {
     speakericon.style.opacity = "1";
@@ -178,7 +178,7 @@ playmusicgreenbtn.addEventListener("click", () => {
   }
 });
 
-// ====================== music to work with the progressbar ======================
+// =================================== music to work with the progressbar ===================================
 audioelement.addEventListener("timeupdate", () => {
   let progress = Number.parseInt(
     (audioelement.currentTime / audioelement.duration) * 100
@@ -192,13 +192,13 @@ musicprogressbar.addEventListener("change", () => {
     (musicprogressbar.value * audioelement.duration) / 100;
 });
 
-// ====================== highlight the current playing music ======================
+// ================================== highlight the current playing music ==================================
 const highlightcurrentplayingmusic = () => {
   allsongitemplay.forEach((element) => {
     let unhighlight = element.nextElementSibling.lastElementChild;
     unhighlight.classList.remove("highlightcurrentplayingmusic");
     speakericon.style.opacity = 0;
-    // show the music information of the current playing song
+    // ======================= show the music information of the current playing song =======================
     let currentplayingsongtitlegroup = Array.from(currentplayingsongtitle);
     currentplayingsongtitlegroup[0].innerText =
       songsdatabase[songindex].songname;
@@ -230,7 +230,7 @@ allsongitemplay.forEach((element) => {
     playmusic.classList.remove("fa-play");
     playmusic.classList.add("fa-pause");
     speakericon.style.opacity = 1;
-    // show the music information of the current playing song
+    // ======================= show the music information of the current playing song =======================
     let currentplayingsongtitlegroup = Array.from(currentplayingsongtitle);
     currentplayingsongtitlegroup[0].innerText =
       songsdatabase[songindex].songname;
@@ -250,7 +250,7 @@ allsongitemplay.forEach((element) => {
   });
 });
 
-// ===================== handle previous next song ===================
+// ================================== handle previous next song ================================
 const previoussong = document.getElementById("previoussong");
 const nextsong = document.getElementById("nextsong");
 previoussong.addEventListener("click", () => {
@@ -265,7 +265,7 @@ previoussong.addEventListener("click", () => {
   playmusic.classList.remove("fa-play");
   playmusic.classList.add("fa-pause");
   speakericon.style.opacity = 1;
-  // show the music information of the current playing song
+  // ======================== show the music information of the current playing song ========================
   let currentplayingsongtitlegroup = Array.from(currentplayingsongtitle);
   currentplayingsongtitlegroup[0].innerText = songsdatabase[songindex].songname;
   currentplayingsongtitlegroup[1].innerText = songsdatabase[songindex].songname;
@@ -294,7 +294,7 @@ nextsong.addEventListener("click", () => {
   playmusic.classList.remove("fa-play");
   playmusic.classList.add("fa-pause");
   speakericon.style.opacity = 1;
-  // show the music information of the current playing song
+  // ======================== show the music information of the current playing song ========================
   let currentplayingsongtitlegroup = Array.from(currentplayingsongtitle);
   currentplayingsongtitlegroup[0].innerText = songsdatabase[songindex].songname;
   currentplayingsongtitlegroup[1].innerText = songsdatabase[songindex].songname;
@@ -309,4 +309,57 @@ nextsong.addEventListener("click", () => {
     songsdatabase[songindex].albumname;
   currentplayingsongalbumgroup[2].innerText =
     songsdatabase[songindex].albumname;
+});
+
+// ============= function to play the next song automatically if the current playing song ends =============
+const playnextsong = () => {
+  songindex++;
+  if (songindex >= songsdatabase.length) {
+    // ========================== if songindex reached the songslist length then loop back and play the first song otherwise play the next song ==========================
+    songindex = 0;
+    console.log(`music/${songindex}.mp3`);
+    // ======================= show the music information of the current playing song =======================
+    let currentplayingsongtitlegroup = Array.from(currentplayingsongtitle);
+    currentplayingsongtitlegroup[0].innerText =
+      songsdatabase[songindex].songname;
+    currentplayingsongtitlegroup[1].innerText =
+      songsdatabase[songindex].songname;
+    let currentplayingmusicphotogroup = Array.from(currentplayingmusicphoto);
+    currentplayingmusicphotogroup[0].src = songsdatabase[songindex].coverpath;
+    currentplayingmusicphotogroup[1].src = songsdatabase[songindex].coverpath;
+    currentplayingmusicphotogroup[2].src = songsdatabase[songindex].coverpath;
+    let currentplayingsongalbumgroup = Array.from(currentplayingsongalbum);
+    currentplayingsongalbumgroup[0].innerText =
+      songsdatabase[songindex].albumname;
+    currentplayingsongalbumgroup[1].innerText =
+      songsdatabase[songindex].albumname;
+    currentplayingsongalbumgroup[2].innerText =
+      songsdatabase[songindex].albumname;
+  } else {
+    audioelement.src = `music/${songindex}.mp3`;
+    audioelement.play();
+    console.log(`music/${songindex}.mp3`);
+    // ======================= show the music information of the current playing song =======================
+    let currentplayingsongtitlegroup = Array.from(currentplayingsongtitle);
+    currentplayingsongtitlegroup[0].innerText =
+      songsdatabase[songindex].songname;
+    currentplayingsongtitlegroup[1].innerText =
+      songsdatabase[songindex].songname;
+    let currentplayingmusicphotogroup = Array.from(currentplayingmusicphoto);
+    currentplayingmusicphotogroup[0].src = songsdatabase[songindex].coverpath;
+    currentplayingmusicphotogroup[1].src = songsdatabase[songindex].coverpath;
+    currentplayingmusicphotogroup[2].src = songsdatabase[songindex].coverpath;
+    let currentplayingsongalbumgroup = Array.from(currentplayingsongalbum);
+    currentplayingsongalbumgroup[0].innerText =
+      songsdatabase[songindex].albumname;
+    currentplayingsongalbumgroup[1].innerText =
+      songsdatabase[songindex].albumname;
+    currentplayingsongalbumgroup[2].innerText =
+      songsdatabase[songindex].albumname;
+  }
+};
+
+// ================ event listener for the music ends then call the play next song function ================
+audioelement.addEventListener("ended", () => {
+  playnextsong();
 });
