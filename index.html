@@ -21,62 +21,64 @@
     <div class="parentcontainer">
       <!-- ====================== sidebar menu ====================== -->
       <aside class="sidebarmenu">
-        <div class="sidebarnavigation">
-          <a href="#" class="sidebarlinks">
-            <i class="fa-solid fa-house"></i>
-            <h2>Home</h2>
-          </a>
-          <a href="#" class="sidebarlinks">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <h2>Search</h2>
-          </a>
-        </div>
-        <div class="librarycontainer">
-          <div class="librarysubcontainer">
-            <div class="opencloselibrary">
-              <i
-                class="fa-solid fa-bars-progress"
-                id="showhidesidebarlibarary"
-              ></i>
-              <h2>Your Library</h2>
+        <div class="sidebarmenuinner">
+          <div class="sidebarnavigation">
+            <a href="#" class="sidebarlinks">
+              <i class="fa-solid fa-house"></i>
+              <h2>Home</h2>
+            </a>
+            <a href="#" class="sidebarlinks">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <h2>Search</h2>
+            </a>
+          </div>
+          <div class="librarycontainer">
+            <div class="librarysubcontainer">
+              <div class="opencloselibrary">
+                <i
+                  class="fa-solid fa-bars-progress"
+                  id="showhidesidebarlibarary"
+                ></i>
+                <h2>Your Library</h2>
+              </div>
+              <div class="libraryindicatoricons">
+                <i class="fa-solid fa-plus"></i>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
             </div>
-            <div class="libraryindicatoricons">
-              <i class="fa-solid fa-plus"></i>
-              <i class="fa-solid fa-arrow-right"></i>
+            <button class="playlistsbtn">playlists</button>
+          </div>
+          <div class="recentactivitycontainer">
+            <div class="searchlibrary">
+              <form action="#" class="searchbar">
+                <input
+                  type="search"
+                  name="searchbar"
+                  placeholder="Search in your library"
+                  id="searchbarinputfield"
+                />
+              </form>
+              <i class="fa-solid fa-magnifying-glass" id="searchsongicon"></i>
+            </div>
+            <div class="recentactivity">
+              <button class="recentactivityindicatorbtn">
+                Recents <i class="fa-solid fa-bars"></i>
+              </button>
             </div>
           </div>
-          <button class="playlistsbtn">playlists</button>
-        </div>
-        <div class="recentactivitycontainer">
-          <div class="searchlibrary">
-            <form action="#" class="searchbar">
-              <input
-                type="search"
-                name="searchbar"
-                placeholder="Search in your library"
-                id="searchbarinputfield"
-              />
-            </form>
-            <i class="fa-solid fa-magnifying-glass" id="searchsongicon"></i>
-          </div>
-          <div class="recentactivity">
-            <button class="recentactivityindicatorbtn">
-              Recents <i class="fa-solid fa-bars"></i>
-            </button>
-          </div>
-        </div>
-        <div class="likedsongscontainer">
-          <div class="likedsongspic">
-            <img src="images/likedsongspic.jpg" alt="likedsongs" />
-          </div>
-          <div class="likedsongsdetails">
-            <h2>Liked Songs</h2>
-            <p class="likedsongsdescription">
-              <i class="fa-solid fa-music"></i> Playlist 11 songs
-            </p>
-          </div>
-          <div class="speakericon">
-            <i class="fa-solid fa-volume-high"></i>
+          <div class="likedsongscontainer">
+            <div class="likedsongspic">
+              <img src="images/likedsongspic.jpg" alt="likedsongs" />
+            </div>
+            <div class="likedsongsdetails">
+              <h2>Liked Songs</h2>
+              <p class="likedsongsdescription">
+                <i class="fa-solid fa-music"></i> Playlist 11 songs
+              </p>
+            </div>
+            <div class="speakericon">
+              <i class="fa-solid fa-volume-high"></i>
+            </div>
           </div>
         </div>
       </aside>
