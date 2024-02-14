@@ -317,7 +317,6 @@ const playnextsong = () => {
   if (songindex >= songsdatabase.length) {
     // ========================== if songindex reached the songslist length then loop back and play the first song otherwise play the next song ==========================
     songindex = 0;
-    console.log(`music/${songindex}.mp3`);
     // ======================= show the music information of the current playing song =======================
     let currentplayingsongtitlegroup = Array.from(currentplayingsongtitle);
     currentplayingsongtitlegroup[0].innerText =
@@ -338,7 +337,6 @@ const playnextsong = () => {
   } else {
     audioelement.src = `music/${songindex}.mp3`;
     audioelement.play();
-    console.log(`music/${songindex}.mp3`);
     // ======================= show the music information of the current playing song =======================
     let currentplayingsongtitlegroup = Array.from(currentplayingsongtitle);
     currentplayingsongtitlegroup[0].innerText =
